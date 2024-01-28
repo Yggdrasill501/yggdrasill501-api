@@ -1,10 +1,13 @@
 package net.yggdrasill501.portfolio.model;
 
+import lombok.Getter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+@Getter
 @Document(collection = "profile_sections")
 public class ProfileSection {
+    // Getters and Setters
     @Id
     private String id;
     private String type; // "education", "work_experience", "activism"
@@ -20,17 +23,8 @@ public class ProfileSection {
         // initialize other fields
     }
 
-    // Getters and Setters
-    public String getId() {
-        return id;
-    }
-
     public void setId(String id) {
         this.id = id;
-    }
-
-    public String getType() {
-        return type;
     }
 
     public void setType(String type) {

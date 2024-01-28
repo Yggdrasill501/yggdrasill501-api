@@ -1,9 +1,27 @@
-import React from "react";
+import React, {useState} from "react";
 import '../styles/LandingPage.css';
 
 function LandingPage() {
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setMenuOpen(!menuOpen);
+    };
+
     return (
             <div className="LandingPage">
+                <div className="menu-icon" onClick={toggleMenu}>
+                    <img src= "/menu-icon.png" alt="menu-icon" />
+                </div>
+                {menuOpen&&(
+                    <div className="menu-overlay">
+                        <div className="menu">
+                            <h2>You can see my project, portfolio and blog here:</h2>
+                            <button onClick={toggleMenu}>Close</button>
+                            <button>Download my CV here</button>
+                         </div>
+                    </div>
+                )}
                 <div className="content">
 
                     <div className="image-container">
